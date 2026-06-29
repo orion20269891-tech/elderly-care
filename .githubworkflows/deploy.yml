@@ -1,0 +1,23 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]    # 当 main 分支有代码推送时自动运行
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 如果你以后需要 npm run build，可以加在这里
+      # 现在直接部署 public 目录即可
+
+      - name: Deploy to web branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public        # 要发布的文件夹
+          publish_branch: web          # 推送到 web 分支
+          force_orphan: true          # 每次清空 web 分支，保持干净
