@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <script src="api-mock.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>颐馨园养老有限公司</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo-area">
+        <div class="logo">颐</div>
+        <h1>颐馨园养老有限公司</h1>
+      </div>
+      <p class="subtitle">养老登记记录信息系统</p>
+    </header>
+
+    <div class="stats-row" id="statsRow">
+      <div class="stat-card">
+        <div class="stat-number" id="statInHouse">0</div>
+        <div class="stat-label">在住老人</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="statTotal">0</div>
+        <div class="stat-label">历史累计</div>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <div class="search-box">
+        <input type="text" id="keywordInput" placeholder="请输入老人姓名查询" autocomplete="off">
+        <button class="btn btn-search" id="searchBtn">搜索</button>
+      </div>
+      <div class="toolbar-right">
+        <label class="checkbox-label">
+          <input type="checkbox" id="showCheckout">
+          显示已退住老人
+        </label>
+        <button class="btn btn-primary" id="addBtn">＋ 登记新入住老人</button>
+      </div>
+    </div>
+
+    <div class="table-wrapper">
+      <table id="elderTable">
+        <thead>
+          <tr>
+            <th>编号</th>
+            <th>姓名</th>
+            <th>入住年龄</th>
+            <th>入住日期</th>
+            <th>状态</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+      </table>
+      <div class="empty-tip" id="emptyTip" style="display:none;">暂无记录</div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="confirmModal" style="display:none;">
+    <div class="modal-box">
+      <div class="modal-title">确认退住</div>
+      <div class="modal-body">确定要为 <strong id="confirmName"></strong> 办理退住吗？此操作不可撤销。</div>
+      <div class="modal-actions">
+        <button class="btn btn-cancel" id="modalCancel">取消</button>
+        <button class="btn btn-danger" id="modalConfirm">确认退住</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

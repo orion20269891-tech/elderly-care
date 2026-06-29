@@ -1,0 +1,24 @@
+[
+  {
+    "id": "E20260629001",
+    "name": "对对对",
+    "birthDate": "1996-06-12",
+    "ageAtCheckin": 30,
+    "idCard": "666666666666666666",
+    "address": "河南省",
+    "underlyingDiseases": "DVD方式",
+    "guardian1": {
+      "name": "事实上",
+      "relationship": "长子",
+      "phone": "15617171178"
+    },
+    "guardian2": {
+      "name": "",
+      "relationship": "",
+      "phone": ""
+    },
+    "remark": "",
+    "checkinDate": "2026-06-29",
+    "status": "已退住"
+  }
+]

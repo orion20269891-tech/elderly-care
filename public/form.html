@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登记/修改 - 颐馨园养老有限公司</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo-area">
+        <div class="logo">颐</div>
+        <h1>颐馨园养老有限公司</h1>
+      </div>
+    </header>
+
+    <div class="form-header">
+      <h2 id="formTitle">登记新入住老人</h2>
+      <button class="btn btn-cancel" id="backBtn">← 返回首页</button>
+    </div>
+
+    <form class="elder-form" id="elderForm" novalidate>
+      <input type="hidden" id="elderId">
+      <input type="hidden" id="mode">
+
+      <fieldset class="form-section">
+        <legend>基本信息</legend>
+        <div class="form-row">
+          <div class="form-group required">
+            <label for="name">姓名</label>
+            <input type="text" id="name" required maxlength="20">
+          </div>
+          <div class="form-group required">
+            <label for="idCard">身份证号</label>
+            <input type="text" id="idCard" required maxlength="20" placeholder="18位身份证号">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group required">
+            <label for="birthDate">出生日期</label>
+            <input type="date" id="birthDate" required>
+          </div>
+          <div class="form-group required">
+            <label for="checkinDate">入住日期</label>
+            <input type="date" id="checkinDate" required>
+          </div>
+          <div class="form-group">
+            <label for="ageAtCheckin">入住年龄</label>
+            <input type="text" id="ageAtCheckin" readonly tabindex="-1">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="address">家庭住址</label>
+          <textarea id="address" rows="2" maxlength="200"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="underlyingDiseases">基础疾病</label>
+          <textarea id="underlyingDiseases" rows="2" maxlength="200" placeholder="如：高血压、糖尿病等"></textarea>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend>监护人一 <span class="required-mark">*</span></legend>
+        <div class="form-row">
+          <div class="form-group required">
+            <label for="g1name">姓名</label>
+            <input type="text" id="g1name" required maxlength="20">
+          </div>
+          <div class="form-group required">
+            <label for="g1relationship">关系</label>
+            <input type="text" id="g1relationship" required maxlength="10" placeholder="如：长子、配偶等">
+          </div>
+          <div class="form-group required">
+            <label for="g1phone">联系方式</label>
+            <input type="text" id="g1phone" required maxlength="15" placeholder="手机号码">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend>监护人二（选填）</legend>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="g2name">姓名</label>
+            <input type="text" id="g2name" maxlength="20">
+          </div>
+          <div class="form-group">
+            <label for="g2relationship">关系</label>
+            <input type="text" id="g2relationship" maxlength="10" placeholder="如：长女、次子等">
+          </div>
+          <div class="form-group">
+            <label for="g2phone">联系方式</label>
+            <input type="text" id="g2phone" maxlength="15" placeholder="手机号码">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend>备注</legend>
+        <div class="form-group">
+          <textarea id="remark" rows="3" maxlength="500" placeholder="其他需要说明的情况"></textarea>
+        </div>
+      </fieldset>
+
+      <div class="form-actions">
+        <button type="button" class="btn btn-cancel" id="cancelBtn">取消</button>
+        <button type="submit" class="btn btn-primary" id="submitBtn">确认登记</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
